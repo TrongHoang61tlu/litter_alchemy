@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { MouseContext } from "./component/event/mouseEvent";
+import Result from "./component/Result";
+import Element from "./component/Sidebar";
 
 function App() {
+  const valueMouseContext = useContext(MouseContext);
+
+  // 
+  //Check kết hợp các nguyên tố
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div
+        className="App"
+        onMouseUp={valueMouseContext.handleMouseUp}
+        onMouseMove={valueMouseContext.handleMouseMove}
+      >
+        <Result />
+        <Element />
+      </div>
   );
 }
 

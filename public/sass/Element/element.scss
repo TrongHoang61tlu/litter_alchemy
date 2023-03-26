@@ -1,0 +1,54 @@
+.main {
+    display: flex;
+    padding: 5px 10px;
+    float: left;
+
+    .alphabeta {
+        ul {
+            list-style: none;
+            padding: 0;
+            font-weight: 300;
+            color: #938671;
+            height: 100vh;
+            overflow: auto;
+
+            li {
+                padding: 4px 2px;
+            }
+        }
+
+        ul::-webkit-scrollbar {
+            width: 1px;
+            /* width of the entire scrollbar */
+        }
+
+        ul::-webkit-scrollbar-track {
+            background:white;
+            /* color of the tracking area */
+        }
+
+        
+    }
+
+    .element {
+        cursor: pointer;
+        .container {
+            display: flex;
+
+            .image {
+                img {
+                    width: 50px;
+                }
+            }
+
+            .title {
+                display: flex;
+                align-items: center;
+                color: #938671;
+            }
+        }
+    }
+
+
+
+}

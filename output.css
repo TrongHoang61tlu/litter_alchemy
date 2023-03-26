@@ -1,0 +1,136 @@
+.App {
+  background-image: url(https://littlealchemy.com/img/workspace-background.png);
+  height: 100vh;
+  display: flex;
+}
+.App .results {
+  width: 1400px;
+  height: 100%;
+  align-items: center;
+}
+.App .main {
+  height: 100vh;
+  width: 300px;
+  background-color: #f7f1e7;
+  display: flex;
+  background-image: url(https://littlealchemy.com/img/library-background.png);
+}
+
+.main {
+  display: flex;
+  padding: 5px 10px;
+  float: left;
+}
+.main .alphabeta ul {
+  list-style: none;
+  padding: 0;
+  font-weight: 300;
+  color: #938671;
+  height: 100vh;
+  overflow: auto;
+}
+.main .alphabeta ul li {
+  padding: 4px 2px;
+}
+.main .alphabeta ul::-webkit-scrollbar {
+  width: 1px;
+  /* width of the entire scrollbar */
+}
+.main .alphabeta ul::-webkit-scrollbar-track {
+  background: white;
+  /* color of the tracking area */
+}
+.main .element {
+  cursor: pointer;
+}
+.main .element .container {
+  display: flex;
+}
+.main .element .container .image img {
+  width: 50px;
+}
+.main .element .container .title {
+  display: flex;
+  align-items: center;
+  color: #938671;
+}
+
+.elements {
+  position: absolute;
+  z-index: 101;
+  cursor: pointer;
+}
+.elements div {
+  width: 74px;
+  height: 74px;
+  position: relative;
+}
+.elements div img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.elements p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #938671;
+  cursor: default;
+}
+.elements .ovelay {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  left: 0;
+  cursor: pointer;
+}
+
+.results {
+  width: 100%;
+}
+.results .result__top {
+  display: flex;
+  justify-content: space-between;
+}
+.results .result__top .screen {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.results .result__top a {
+  color: #938671;
+  text-decoration: none;
+  border-bottom: solid 1px #e8ded0;
+  font-size: 16px;
+  height: 20px;
+}
+.results .result__mid {
+  position: absolute;
+  width: 900px;
+}
+.results .result__bottom {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+.results .result__bottom .progerss {
+  display: flex;
+  align-items: end;
+  font-weight: 60;
+  font-size: 50pt;
+  color: #e8ded0;
+  cursor: pointer;
+}
+.results .result__bottom ul {
+  list-style: none;
+  border: 0;
+}
+.results .result__bottom ul li {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=output.css.map */

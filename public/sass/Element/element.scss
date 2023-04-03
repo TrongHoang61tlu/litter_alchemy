@@ -31,6 +31,8 @@
     }
 
     .element {
+        height:98vh;
+        overflow: auto;
         cursor: pointer;
         .container {
             display: flex;
@@ -47,6 +49,10 @@
                 color: #938671;
             }
         }
+    }
+    .element::-webkit-scrollbar {
+        width: 1px;
+        /* width of the entire scrollbar */
     }
 
 

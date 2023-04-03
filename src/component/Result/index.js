@@ -8,9 +8,7 @@ function Result() {
   const valueMouseContext = useContext(MouseContext);
   const [screen, setScreen] = useState(false);
   const [content, setContent] = useState(false);
-  const [reset, setReset] = useState(valueHandleCombine.dataResult)
 
-console.log(reset);
   //click full screen
   const handleClickFullScreen = () => {
     if (!document.fullscreenElement) {
@@ -73,22 +71,24 @@ console.log(reset);
         {/* <div className="result__mid"> */}
           {valueMouseContext.mouseMove && Object.values(valueMouseContext.elementSelect).length > 0 && (
             <Elements
+            draggable="true"
               img={valueMouseContext.elementSelect.url}
               name={valueMouseContext.elementSelect.title}
               position={
                 Object.values(valueMouseContext.elementSelect).length !== 0 ? valueMouseContext.position : null
               }
               hidden={valueMouseContext.mouseMove ? true : false}
-              zIndex="102"
+              zIndex="101"
             />
           )}
           {valueHandleCombine.dataResult.map((element, index) => (
             <Elements
+            draggable="true"
               key={index}
               img={element.element.url}
               name={element.element.title}
               position={element.position}
-              onMouseDowns={() =>
+              onMouseDown={() =>
                 valueMouseContext.handleMouseDown(element.element, {
                   type: 'content',
                   ix: index,
@@ -115,7 +115,7 @@ console.log(reset);
               />
             </li>
             <li>
-              <img onClick={handleReset}  src="https://littlealchemy.com/img/clear.png" alt="img" />
+              <img onClick={handleReset} src="https://littlealchemy.com/img/clear.png" alt="img" />
             </li>
             <li>
               <img

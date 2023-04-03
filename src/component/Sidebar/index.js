@@ -51,8 +51,9 @@ function Sidebar() {
         <div className="element">
           {dataSidebar.map((element, index) => (
             <div
+            key={element.id}
               className="container"
-              onMouseDown={() => {
+              onClick={() => {
                 valueMouseContext.handleMouseDown(element, {
                   type: "sidebar",
                   ix: index,

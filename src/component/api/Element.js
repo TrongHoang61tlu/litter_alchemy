@@ -1,4 +1,4 @@
-function Elements({ img, name, position, onMouseDowns, zIndex, opacity }) {
+function Elements({ img, name, position, onMouseDown, zIndex, opacity }) {
   return (
     <div
       className="elements"
@@ -13,7 +13,7 @@ function Elements({ img, name, position, onMouseDowns, zIndex, opacity }) {
           : { left: 1741, top: 0, display: "none" }
       }
     >
-      <div onMouseDown={onMouseDowns}>
+      <div onClick={onMouseDown}>
         <img src={img} alt="photos" />
       </div>
       <p>{name}</p>

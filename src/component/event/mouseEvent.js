@@ -1,16 +1,15 @@
 import { createContext, useContext, useState } from "react";
 import { CheckCombine } from "./checkCombine";
 import { v4 as uuidv4 } from "uuid";
-import elements from "../api/elements";
 
 const MouseContext = createContext();
 function MouseEvent({ children }) {
   const valueHandleCombine = useContext(CheckCombine);
-  const [mouseMove, setMouseMove] = useState(false);
-  const [typeElement, setTypeElement] = useState("");
-  const [position, setPosition] = useState({});
-  const [width, setWWidth] = useState(window.innerWidth);
   const [mouseDown, setMouseDown] = useState(false);
+  const [mouseMove, setMouseMove] = useState(false);
+  const [typeElement, setTypeElement] = useState('');
+  const [position, setPosition] = useState({});
+  const [width, setWidth] = useState(window.innerWidth);
   const [elementSelect, setElementSelect] = useState({});
 
   //Xử lý kéo thả
@@ -21,7 +20,7 @@ function MouseEvent({ children }) {
     setElementSelect(item);
     setMouseMove(false);
   };
-  
+
   //Hành động kéo chuột
   const handleMouseMove = (e) => {
     if (mouseDown) {
@@ -30,7 +29,7 @@ function MouseEvent({ children }) {
         left: e.clientX,
         top: e.clientY,
       });
-      if (typeElement.type ===  'content') {
+      if (typeElement.type === 'content') {
         const newData = valueHandleCombine.dataResult.filter(
           (item, index) => index !== typeElement.ix
         );
@@ -42,12 +41,12 @@ function MouseEvent({ children }) {
         element: elementSelect,
         position: position,
       };
-      const newData = valueHandleCombine.dataResult?.filter(
+      const newData = valueHandleCombine.dataResult.filter(
         (element, index) =>
-        element.position.left - 32 <= position.left &&
-        position.left <= element.position.left + 32 &&
-        element.position.top - 32 <= position.top &&
-        position.top <= element.position.top + 32,
+          element.position.left - 32 <= position.left &&
+          position.left <= element.position.left + 32 &&
+          element.position.top - 32 <= position.top &&
+          position.top <= element.position.top + 32
       );
       valueHandleCombine.setElementIsSelect(formData);
       valueHandleCombine.setElementDuplicate(
@@ -69,7 +68,7 @@ function MouseEvent({ children }) {
     if (position.left < width - 300 && mouseMove === true) {
       valueHandleCombine.setDataResult([
         ...valueHandleCombine.dataResult,
-        newData
+        newData,
       ]);
     }
 
@@ -96,7 +95,9 @@ function MouseEvent({ children }) {
     handleMouseUp,
     handleMouseDown,
   };
-  return <MouseContext.Provider value={value}>{children}</MouseContext.Provider>;
+  return (
+    <MouseContext.Provider value={value}>{children}</MouseContext.Provider>
+  );
 }
 
 export { MouseContext, MouseEvent };

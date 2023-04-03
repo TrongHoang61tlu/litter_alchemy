@@ -41,6 +41,8 @@
   /* color of the tracking area */
 }
 .main .element {
+  height: 98vh;
+  overflow: auto;
   cursor: pointer;
 }
 .main .element .container {
@@ -53,6 +55,10 @@
   display: flex;
   align-items: center;
   color: #938671;
+}
+.main .element::-webkit-scrollbar {
+  width: 1px;
+  /* width of the entire scrollbar */
 }
 
 .elements {

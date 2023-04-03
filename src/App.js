@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { MouseContext } from "./component/event/mouseEvent";
 
 import Element from "./component/Sidebar";
-import Results from "./component/result";
+import Results from "./component/Result";
 
 function App() {
   const valueMouseContext = useContext(MouseContext);

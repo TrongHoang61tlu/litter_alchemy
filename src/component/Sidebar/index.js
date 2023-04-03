@@ -16,6 +16,7 @@ function Sidebar() {
         : -1
       : -1
   );
+  
   return (
     <>
       <div className="main">
@@ -51,14 +52,15 @@ function Sidebar() {
         <div className="element">
           {dataSidebar.map((element, index) => (
             <div
-            key={element.id}
+              key={index}
               className="container"
-              onClick={() => {
+              onMouseDown={() => {
                 valueMouseContext.handleMouseDown(element, {
-                  type: "sidebar",
+                  type: 'sidebar',
                   ix: index,
                 });
               }}
+              
             >
               <div className="image">
                 <img src={element.url} alt="" />

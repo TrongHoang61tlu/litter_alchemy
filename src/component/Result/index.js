@@ -3,7 +3,7 @@ import Elements from "../api/Element";
 import { CheckCombine } from "../event/checkCombine";
 import { MouseContext } from "../event/mouseEvent";
 import elements from  "../api/elements";
-function Result() {
+function Results() {
   const valueHandleCombine = useContext(CheckCombine);
   const valueMouseContext = useContext(MouseContext);
   const [screen, setScreen] = useState(false);
@@ -71,19 +71,17 @@ function Result() {
         {/* <div className="result__mid"> */}
           {valueMouseContext.mouseMove && Object.values(valueMouseContext.elementSelect).length > 0 && (
             <Elements
-            draggable="true"
               img={valueMouseContext.elementSelect.url}
               name={valueMouseContext.elementSelect.title}
               position={
                 Object.values(valueMouseContext.elementSelect).length !== 0 ? valueMouseContext.position : null
               }
               hidden={valueMouseContext.mouseMove ? true : false}
-              zIndex="101"
+              zIndex="102"
             />
           )}
           {valueHandleCombine.dataResult.map((element, index) => (
             <Elements
-            draggable="true"
               key={index}
               img={element.element.url}
               name={element.element.title}
@@ -94,6 +92,7 @@ function Result() {
                   ix: index,
                 })
               }
+              
               opacity={
                 checkItemDuplicate(
                 valueHandleCombine.elementDuplicate.idElement,
@@ -130,4 +129,4 @@ function Result() {
   );
 }
 
-export default Result;
+export default Results;

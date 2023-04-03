@@ -41,6 +41,14 @@
                 img {
                     width: 50px;
                 }
+                .overlay{
+                    position: absolute;
+                    top: 60px;
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+                    cursor: pointer;
+                }
             }
 
             .title {

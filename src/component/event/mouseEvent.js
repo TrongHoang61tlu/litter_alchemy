@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { CheckCombine } from "./checkCombine";
 import { v4 as uuidv4 } from "uuid";
+import { useRef } from "react";
 
 const MouseContext = createContext();
 function MouseEvent({ children }) {
@@ -22,12 +23,12 @@ function MouseEvent({ children }) {
   };
 
   //Hành động kéo chuột
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (ev) => {
     if (mouseDown) {
       setMouseMove(true);
       setPosition({
-        left: e.clientX,
-        top: e.clientY,
+        left: ev.clientX,
+        top: ev.clientY,
       });
       if (typeElement.type === 'content') {
         const newData = valueHandleCombine.dataResult.filter(

@@ -10,11 +10,16 @@ function Elements({ img, name, position, onMouseDown, zIndex, opacity }) {
               zIndex: zIndex,
               opacity: opacity,
             }
-          : { left: 1741, top: 0, display: "none" }
+          : { left: 1741, top: 85, display: "none" }
       }
     >
-      <div onClick={onMouseDown}>
+      <div className="cayxanh">
         <img src={img} alt="photos" />
+        <div
+          className="overlay"
+          onMouseDown={onMouseDown}
+          
+        ></div>
       </div>
       <p>{name}</p>
     </div>

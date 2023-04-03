@@ -1,23 +1,24 @@
 import { useContext } from "react";
 import { MouseContext } from "./component/event/mouseEvent";
-import Result from "./component/Result";
+
 import Element from "./component/Sidebar";
+import Results from "./component/result";
 
 function App() {
   const valueMouseContext = useContext(MouseContext);
-  console.log(valueMouseContext.handleMouseUp);
 
-  // 
+  //
   //Check kết hợp các nguyên tố
   return (
-      <div
-        className="App"
-        onMouseUp={valueMouseContext.handleMouseUp}
-        onMouseMove={valueMouseContext.handleMouseMove}
-      >
-        <Result />
-        <Element />
-      </div>
+    <div
+      className="App"
+      onMouseUp={valueMouseContext.handleMouseUp}
+      onMouseMove={valueMouseContext.handleMouseMove}
+      
+    >
+      <Results />
+      <Element />
+    </div>
   );
 }
 

@@ -38,9 +38,11 @@
             display: flex;
 
             .image {
+
+                position: relative;
                 img {
                     width: 50px;
-                    position: relative;
+                   
                 }
                 .overlay{
                     position: absolute;

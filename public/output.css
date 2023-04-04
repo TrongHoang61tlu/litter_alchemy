@@ -48,9 +48,11 @@
 .main .element .container {
   display: flex;
 }
+.main .element .container .image {
+  position: relative;
+}
 .main .element .container .image img {
   width: 50px;
-  position: relative;
 }
 .main .element .container .image .overlay {
   position: absolute;

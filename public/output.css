@@ -50,10 +50,11 @@
 }
 .main .element .container .image img {
   width: 50px;
+  position: relative;
 }
 .main .element .container .image .overlay {
   position: absolute;
-  top: 60px;
+  bottom: 0;
   display: block;
   width: 60px;
   height: 60px;
